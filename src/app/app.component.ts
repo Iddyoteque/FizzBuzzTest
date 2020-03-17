@@ -18,6 +18,13 @@ export class AppComponent {
   fbResult = [];
   operationComplete = ``
   three:any = 3;
+
+  fizzCount:number = 0;
+  buzzCount:number = 0;
+  fizzBuzzcount:number = 0;
+  luckyCount:number = 0;
+  integerCount:number = 0;
+
   // fizzBuzzInput: any;
 
 
@@ -34,23 +41,34 @@ export class AppComponent {
 
       if (this.fizzBuzzNumber.toString().match(/3/) != null ) {
         this.fbResult.push('Lucky');
+        this.luckyCount++;
       }
         else if (this.fizzBuzzNumber % this.fizzInput == 0 && this.fizzBuzzNumber % this.buzzInput == 0) {
           this.fbResult.push('FizzBuzz');
+          this.fizzBuzzcount++;
         }  
         
         else if (this.fizzBuzzNumber % this.fizzInput == 0 ) {
           this.fbResult.push('Fizz');
+          this.fizzCount++;
         } 
         
         else if (this.fizzBuzzNumber % this.buzzInput == 0) {
           this.fbResult.push('Buzz');
+          this.buzzCount++;
         } 
         
         else {
           this.fbResult.push(this.fizzBuzzNumber);
+          this.integerCount++;
       } 
-      this.operationComplete = `Operation is complete!`;
+      this.operationComplete = `Operation is complete! \n` +
+      `Lucky appeared ${this.luckyCount} times! \n` +
+      `Fizz appeared ${this.fizzCount} times! \n` +
+      `Buzz appeared ${this.buzzCount} times! \n` +
+      `FizzBuzz appeared ${this.fizzBuzzcount} times! \n` +
+      `Integer appeared ${this.integerCount} times!`
+      ;
     }
 
 

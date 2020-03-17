@@ -344,7 +344,7 @@
   <label for="loopNumber">Loop</label>
   <input type="number"  [(ngModel)] ="loopInput">
   <button class="btn" (click) = "result()">Generate!</button>
-  <h2>{{ operationComplete }}</h2>
+  <h3>{{ operationComplete }}</h3>
   <button class="btn" (click) = "clear()">Reset the operation</button>
   <hr>
   <h3 *ngFor="let number of fbResult
