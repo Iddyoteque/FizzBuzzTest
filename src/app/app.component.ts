@@ -4,7 +4,7 @@ import { AppService } from './app.service.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass'],
+  styleUrls: ['./app.component.css'],
   providers: [ AppService ]
 })
 export class AppComponent {
@@ -17,6 +17,7 @@ export class AppComponent {
   fizzBuzzNumber:any;  
   fbResult = [];
   operationComplete = ``
+  three:any = 3;
   // fizzBuzzInput: any;
 
 
@@ -30,7 +31,11 @@ export class AppComponent {
     }
 
     for (this.fizzBuzzNumber=1; this.fizzBuzzNumber <= this.loopInput; this.fizzBuzzNumber++) {
-        if (this.fizzBuzzNumber % this.fizzInput == 0 && this.fizzBuzzNumber % this.buzzInput == 0) {
+
+      if (this.fizzBuzzNumber.toString().match(/3/) != null ) {
+        this.fbResult.push('Lucky');
+      }
+        else if (this.fizzBuzzNumber % this.fizzInput == 0 && this.fizzBuzzNumber % this.buzzInput == 0) {
           this.fbResult.push('FizzBuzz');
         }  
         
