@@ -1,15 +1,11 @@
+import { Injectable } from '@angular/core';
 import { Component } from '@angular/core';
-import { AppService } from './app.service.service';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass'],
-  providers: [ AppService ]
+@Injectable({
+  providedIn: 'root'
 })
-export class AppComponent {
+export class AppService {
 
-  ngServe() {}
   title = 'fizzBuzz';
   fizzInput:number;
   buzzInput:number;
@@ -60,3 +56,5 @@ export class AppComponent {
     this.buzzInput = 0;
   }
  }
+
+  
